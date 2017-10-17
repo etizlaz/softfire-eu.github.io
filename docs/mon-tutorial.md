@@ -1,4 +1,4 @@
-# Monitoring Tutorial -- Preliminary Version
+# Monitoring Tutorial
 
 This tutorial will guide you through the definition of Monitoring example and to upload it.
 
