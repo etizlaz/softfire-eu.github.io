@@ -1,4 +1,4 @@
-# Monitoring Tutorial -- Preliminary Version
+# Monitoring Tutorial
 
 This tutorial will guide you through the definition of Monitoring example and to upload it.
 
@@ -122,6 +122,38 @@ On succesfull login the Zabbix Dashboard is displayed.
 ![tutorial Monitor 8](img/Monitor_Tutorial-08.PNG)
 
 If you wish, you can tailor the Dashboard according to you monitoring needs.
+
+If you need to add Zabbix agent on a VM you can do it manually as follow:
+
+Login into your VM and install the agent:
+
+```
+$ sudo apt update
+$ sudo apt-get install zabbix-agent
+```
+Then edit the file /etc/zabbix/zabbix_agentd.conf
+
+```
+$ sudo vim /etc/zabbix/zabbix_agentd.conf 
+```
+Set the Zabbix server ip address and the VM Hostname accordingly to your experiment
+Use the Zabbix server InternalIP address if your VM is colocated with the Server, otherwise use the floatingIP
+```
+Server=192.117.1.10
+ServerActive=192.117.1.10
+Hostname=Test_VM
+
+```
+Restart the Zabbix agent 
+```
+$ sudo /etc/init.d/zabbix-agent restart
+```
+Wait a couple of minutes and your VM status appear on Zabbix server dashboard
+
+![tutorial Monitor 9](img/Monitor_Tutorial-09.PNG)
+
+
+
 
 <!---
  Script for open external links in a new tab
